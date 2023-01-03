@@ -17,7 +17,7 @@ function NewsCarousel() {
   const getNewsCarousel = () => {
     axios
       .get(
-        "https://newsapi.org/v2/top-headlines?sources=globo&apiKey=9440f38accc54afdacaacd4d6c481ebe"
+        "https://newsapi.org/v2/top-headlines?country=br&category=business&apiKey=9440f38accc54afdacaacd4d6c481ebe"
       )
       .then((result) =>
         setNewCarousel(result.data.articles).catch((err) => console.log(err))
@@ -26,28 +26,36 @@ function NewsCarousel() {
 
   return (
     <div className="col-6">
-      <Carousel
-        activeIndex={index}
-        onSelect={handleSelect}
+      <div
         style={{
+          width: "50rem",
           height: "23.25rem",
+          backgroundColor: "black",
+          opacity: "0.7",
         }}
       >
-        {newsCarousel.map((item, key) => (
-          <Carousel.Item key={key}>
-            <img
-              className="d-block w-100"
-              src={item.urlToImage}
-              alt=""
-              style={{ height: "23.25rem" }}
-            />
-            <Carousel.Caption>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+        <Carousel
+          activeIndex={index}
+          onSelect={handleSelect}
+          style={{
+            height: "23.25rem",
+          }}
+        >
+          {newsCarousel.map((item, key) => (
+            <Carousel.Item key={key}>
+              <img
+                className="d-block w-100"
+                src={item.urlToImage}
+                alt=""
+                style={{ height: "23.25rem" }}
+              />
+              <Carousel.Caption>
+                <h3>{item.title}</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
     </div>
   );
 }
