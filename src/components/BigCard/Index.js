@@ -7,20 +7,18 @@ function BigCard() {
       className="col-3 row"
       style={{
         height: "16.5rem",
-        marginRight: "0.2rem",
+        marginRight: "0.6rem",
       }}
     >
       <Card
         className="text-white"
         style={{
-          // width: "19rem",
           height: "15rem",
         }}
       >
         <Card.Img
           src="https://s2.glbimg.com/TfRVj-U3LcPN0VR3wSpgkRqwN1E=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/e/W/gjmPKgTymDHKFKh2bdyA/2106-bandeiras-tarifarias.png"
           style={{
-            // width: "19rem",
             height: "14rem",
           }}
         />

@@ -4,7 +4,11 @@ import NewsCarousel from "../components/Carousel/Index";
 import BigCard from "../components/BigCard/Index";
 import NewsCard from "../components/Card/Index";
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import TopNews from "../components/TopNews/Index";
+import Purchasing from "../components/Purchasing/Index";
+import Entertainment from "../components/Entertainment/Index";
+import Offers from "../components/Offers/Index";
+import Popular from "../components/Popular/Index";
 
 export const Home = () => {
   const [news, setNews] = useState([]);
@@ -32,14 +36,14 @@ export const Home = () => {
   return (
     <>
       <Navbar />
-      <Container>
+      <div style={{ maxWidth: "1600px", alignItems: "center", margin: "auto" }}>
         <div className="row" style={{ marginTop: "2rem" }}>
           <NewsCarousel />
           <BigCard />
           <BigCard />
           <div style={{ marginTop: "0.5rem" }}>
             <div className="row">
-              {news.map((item, key) => (
+              {news.slice(0, 8).map((item, key) => (
                 <div className="col-3">
                   <NewsCard
                     key={key}
@@ -51,9 +55,15 @@ export const Home = () => {
                 </div>
               ))}
             </div>
+            <hr />
+            <TopNews />
+            <Purchasing />
+            <Entertainment />
+            <Offers />
+            <Popular />
           </div>
         </div>
-      </Container>
+      </div>
       ;
     </>
   );

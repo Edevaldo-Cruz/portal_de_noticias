@@ -9,6 +9,7 @@ function NewsCard({ url, image, title, author }) {
       }}
     >
       <a
+        className="text-underline-hover"
         href={url}
         style={{
           width: "30rem",
@@ -37,7 +38,7 @@ function NewsCard({ url, image, title, author }) {
                 >
                   {title}
                 </Card.Title>
-                <Card.Text className="fs-7 position-absolute bottom-0 end-0">
+                <Card.Text className="text-end align-text-bottom">
                   {author}
                 </Card.Text>
               </div>
