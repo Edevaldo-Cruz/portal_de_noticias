@@ -31,7 +31,7 @@ function NewsCarousel() {
           width: "50rem",
           height: "23.25rem",
           backgroundColor: "black",
-          opacity: "0.7",
+          opacity: "0.9",
         }}
       >
         <Carousel

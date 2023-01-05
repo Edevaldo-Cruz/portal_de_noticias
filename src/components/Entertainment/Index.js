@@ -5,6 +5,15 @@ import ContainerCard from "../ContainerCard/Index";
 function Entertainment() {
   return (
     <>
+      <div
+        style={{
+          borderTopStyle: "solid",
+          borderTopWidth: 4,
+          borderTopColor: "#000",
+        }}
+      >
+        <h1>Enterterimento</h1>
+      </div>
       <div className="row d-flex justify-content-between">
         <SpecialCard />
         <ContainerCard />

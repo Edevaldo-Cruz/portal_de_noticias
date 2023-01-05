@@ -55,7 +55,6 @@ export const Home = () => {
                 </div>
               ))}
             </div>
-            <hr />
             <TopNews />
             <Purchasing />
             <Entertainment />
