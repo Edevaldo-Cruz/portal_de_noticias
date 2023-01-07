@@ -1,23 +1,28 @@
 import Card from "react-bootstrap/Card";
 
-function SpecialCard({ url, img, news, author }) {
+function SpecialCard({ url, img, title, description, author }) {
   return (
-    <a
-      style={{ width: "23.75rem", height: "21rem", padding: "0px" }}
-      href={url}
-    >
+    <a href={url} key={url}>
       <Card>
         <Card.Img
-          variant="top"
           src={img}
-          style={{ width: "23.75rem", height: "11rem", padding: "0px" }}
+          style={{
+            width: "30rem",
+            height: "23.5rem",
+          }}
         />
-        <Card.Body>
-          <Card.Text>
-            <b>{news}</b>
-          </Card.Text>
-          <Card.Text className="text-end">{author}</Card.Text>
-        </Card.Body>
+        <Card.ImgOverlay className="d-flex align-items-end">
+          <div
+            style={{
+              backgroundColor: "rgba(52, 52, 52, 0.7)",
+              width: "20rem",
+            }}
+          >
+            <Card.Title style={{ color: "white" }}>{title}</Card.Title>
+            <Card.Text style={{ color: "white" }}>{description}</Card.Text>
+            <Card.Text style={{ color: "white" }}>{author}</Card.Text>
+          </div>
+        </Card.ImgOverlay>
       </Card>
     </a>
   );
