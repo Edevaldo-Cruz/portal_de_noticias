@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "https://newsapi.org/v2/top-headlines?country=br&",
-});
-
 export function useAPI(url) {
+  const api = axios.create({
+    baseURL: "https://newsapi.org/v2/",
+  });
+
   const [itens, setItens] = useState([]);
 
   var i = 0;

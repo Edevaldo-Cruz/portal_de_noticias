@@ -7,15 +7,18 @@ import BigCard from "../components/BigCard/Index";
 import NewsCard from "../components/Card/Index";
 import TopNews from "../components/TopNews/Index";
 import Entertainment from "../components/Entertainment/Index";
-import Offers from "../components/Offers/Index";
+import Technology from "../components/Technology/Index";
 import Popular from "../components/Popular/Index";
 import { useAPI } from "../hooks/useAPI";
 import Sports from "../components/Sports/Index";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
+import LinkCarousel from "../components/LinkCarousel/Index";
 
 export const Home = () => {
-  const { itens: news } = useAPI("apiKey=9440f38accc54afdacaacd4d6c481ebe");
+  const { itens: news } = useAPI(
+    "top-headlines?country=br&apiKey=9440f38accc54afdacaacd4d6c481ebe"
+  );
 
   const [location, setLocation] = useState(false);
   const [show, setShow] = useState(false);
@@ -52,41 +55,49 @@ export const Home = () => {
     <>
       <Navbar />
       <div style={{ maxWidth: "1600px", alignItems: "center", margin: "auto" }}>
+        <LinkCarousel />
         <div>
+          <hr />
           <ul className="d-flex justify-content-between">
             <Nav.Link className="teste" onClick={handleShow}>
-              {weather.map((item, key) => (
-                <b>
-                  {item.name}/ {item.main.temp}º |
+              {weather.map((item) => (
+                <b style={{ color: "#A1A1A1" }}>
+                  {item.name} / {item.main.temp}º
                 </b>
               ))}
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/noticias/brasil?cvid=575e8a2410d742b6942d94d7073cf5f3">
-              <b>BRASIL</b>
+            <Nav.Link href="https://www.msn.com/pt-br/noticias?cvid=cb933c86e219409497b26580606ba535">
+              <b style={{ color: "#A1A1A1" }}>NOTÍCIAS</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/noticias/mundo?cvid=575e8a2410d742b6942d94d7073cf5f3">
-              <b>MUNDO</b>
+            <Nav.Link href="https://www.msn.com/pt-br/entretenimento?cvid=cb933c86e219409497b26580606ba535">
+              <b style={{ color: "#A1A1A1" }}>ENTRETENIMENTO</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/noticias/covid?cvid=575e8a2410d742b6942d94d7073cf5f3">
-              <b>CORONAVÍRUS</b>
+            <Nav.Link href="https://www.msn.com/pt-br/esportes?cvid=cb933c86e219409497b26580606ba535">
+              <b style={{ color: "#A1A1A1" }}>ESPORTES</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/clima/?cvid=575e8a2410d742b6942d94d7073cf5f3">
-              <b>TEMPO</b>
+            <Nav.Link href="https://www.msn.com/pt-br/estilo-de-vida?cvid=cb933c86e219409497b26580606ba535">
+              <b style={{ color: "#A1A1A1" }}>ESTILO DE VIDA</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/noticias/ciencia?cvid=575e8a2410d742b6942d94d7073cf5f3">
-              <b>CIÊNCIAS</b>
+            <Nav.Link href="https://www.msn.com/pt-br/estilo-de-vida/horoscopo?cvid=cb933c86e219409497b26580606ba535">
+              <b style={{ color: "#A1A1A1" }}>HORÓSCOPO</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/noticias/tecnologia?cvid=575e8a2410d742b6942d94d7073cf5f3">
-              <b>TECNOLOGIA</b>
+            <Nav.Link href="https://www.msn.com/pt-br/dinheiro?cvid=cb933c86e219409497b26580606ba535">
+              <b style={{ color: "#A1A1A1" }}>DINHEIRO</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/noticias/educacao?cvid=575e8a2410d742b6942d94d7073cf5f3">
-              <b>EDUCAÇÃO</b>
+            <Nav.Link href="https://www.msn.com/pt-br/receitasebebidas?cvid=cb933c86e219409497b26580606ba535">
+              <b style={{ color: "#A1A1A1" }}>RECEITAS</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/noticias/meio-ambiente?cvid=575e8a2410d742b6942d94d7073cf5f3">
-              <b>MEIO AMBIENTE</b>
+            <Nav.Link href="https://start.gg/discover?locale=pt-br&ocid=essports">
+              <b style={{ color: "#A1A1A1" }}>ESPORTS</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/noticias/loterias?cvid=575e8a2410d742b6942d94d7073cf5f3">
-              <b>LOTERIAS</b>
+            <Nav.Link href="https://www.msn.com/pt-br/carros?cvid=cb933c86e219409497b26580606ba535">
+              <b style={{ color: "#A1A1A1" }}>CARROS</b>
+            </Nav.Link>
+            <Nav.Link href="https://www.msn.com/pt-br/tv?cvid=cb933c86e219409497b26580606ba535">
+              <b style={{ color: "#A1A1A1" }}>TV</b>
+            </Nav.Link>
+            <Nav.Link href="https://www.msn.com/pt-br/clima?cvid=cb933c86e219409497b26580606ba535">
+              <b style={{ color: "#A1A1A1" }}>TEMPO</b>
             </Nav.Link>
           </ul>
         </div>
@@ -96,7 +107,7 @@ export const Home = () => {
           <BigCard />
           <div style={{ marginTop: "0.5rem" }}>
             <div className="row">
-              {news.slice(0, 8).map((item, key) => (
+              {news.slice(1, 9).map((item, key) => (
                 <div className="col-3">
                   <NewsCard
                     key={key}
@@ -111,7 +122,7 @@ export const Home = () => {
             <TopNews />
             <Sports />
             <Entertainment />
-            <Offers />
+            <Technology />
             <Popular />
           </div>
         </div>

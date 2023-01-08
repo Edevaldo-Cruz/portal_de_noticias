@@ -23,7 +23,7 @@ function NewsCarousel() {
   };
 
   return (
-    <div className="col-6">
+    <div className="col-6 ">
       <div
         style={{
           width: "50rem",
@@ -33,6 +33,7 @@ function NewsCarousel() {
         }}
       >
         <Carousel
+          className="shadow "
           activeIndex={index}
           onSelect={handleSelect}
           style={{
@@ -41,15 +42,23 @@ function NewsCarousel() {
         >
           {newsCarousel.map((item, key) => (
             <Carousel.Item key={key}>
-              <img
-                className="d-block w-100"
-                src={item.urlToImage}
-                alt=""
-                style={{ height: "23.25rem" }}
-              />
-              <Carousel.Caption>
-                <h3>{item.title}</h3>
-              </Carousel.Caption>
+              <a href={item.url}>
+                <img
+                  className="d-block w-100"
+                  src={item.urlToImage}
+                  alt=""
+                  style={{ height: "23.25rem" }}
+                />
+                <Carousel.Caption>
+                  <div
+                    style={{
+                      backgroundColor: "rgba(52, 52, 52, 0.9)",
+                    }}
+                  >
+                    <h3>{item.title}</h3>
+                  </div>
+                </Carousel.Caption>
+              </a>
             </Carousel.Item>
           ))}
         </Carousel>

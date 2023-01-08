@@ -14,12 +14,12 @@ function Popular() {
       >
         <h1>Mais Popular</h1>
       </div>
-      <div className="row d-flex justify-content-between">
+      {/* <div className="row d-flex justify-content-between">
         <SpecialCard />
         <ContainerCard />
         <ContainerCard />
         <SpecialCard />
-      </div>
+      </div> */}
       <hr />
     </>
   );

@@ -62,7 +62,7 @@ export const TopNews = () => {
             marginRight: "1.5rem",
           }}
         >
-          {news.slice(19, 20).map((item, key) => (
+          {news.slice(0, 1).map((item, key) => (
             <SpecialCard
               url={item.url}
               img={item.urlToImage}

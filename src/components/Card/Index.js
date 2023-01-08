@@ -18,7 +18,7 @@ function NewsCard({ url, image, title, author }) {
           color: "black",
         }}
       >
-        <Card>
+        <Card className="Regular shadow ">
           <Card.Body className="p-2">
             <div className="row">
               <div className="col-2">
