@@ -9,9 +9,8 @@ function NewNavbar() {
   return (
     <Navbar
       className="shadow mb-5"
-      expand="lg"
       sticky="top"
-      style={{ height: "6.75rem", backgroundColor: "##f4f4f2" }}
+      style={{ height: "6.75rem", backgroundColor: "#f4f4f2" }}
     >
       <Container
         style={{ maxWidth: "1600px", alignItems: "center", margin: "auto" }}

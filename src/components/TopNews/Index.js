@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import { useAPI } from "../../hooks/useAPI";
 import SpecialCard from "../SpecialCard/Index";
+import "./Style.css";
 
 export const TopNews = () => {
   const { itens: news } = useAPI(
@@ -20,10 +21,12 @@ export const TopNews = () => {
         }}
       >
         <ul className="d-flex justify-content-between">
-          <Nav.Link>
-            <h4>Notícias</h4>
-          </Nav.Link>
-          <Nav.Link href="https://www.msn.com/pt-br/noticias/brasil?cvid=575e8a2410d742b6942d94d7073cf5f3">
+          <h1>Notícias</h1>
+          <Nav.Link></Nav.Link>
+          <Nav.Link
+            className="colorRed"
+            href="https://www.msn.com/pt-br/noticias/brasil?cvid=575e8a2410d742b6942d94d7073cf5f3"
+          >
             <b>BRASIL</b>
           </Nav.Link>
           <Nav.Link href="https://www.msn.com/pt-br/noticias/mundo?cvid=575e8a2410d742b6942d94d7073cf5f3">

@@ -15,6 +15,8 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import LinkCarousel from "../components/LinkCarousel/Index";
 
+import "./Style.css";
+
 export const Home = () => {
   const { itens: news } = useAPI(
     "top-headlines?country=br&apiKey=9440f38accc54afdacaacd4d6c481ebe"
@@ -35,13 +37,16 @@ export const Home = () => {
           lat: lat,
           lon: long,
           appid: process.env.REACT_APP_OPEN_WHEATHER_KEY,
+          //appid: "e5acddc6234c161716cc24ac706d4518",
           lang: "pt",
           units: "metric",
         },
       }
     );
-    itemNews.push(res.data);
-    setWeather(itemNews);
+    // itemNews.push(res.data);
+    // setWeather(itemNews);
+    //console.log(res.data);
+    setWeather(res.data);
   };
 
   useEffect(() => {
@@ -61,43 +66,73 @@ export const Home = () => {
           <ul className="d-flex justify-content-between">
             <Nav.Link className="teste" onClick={handleShow}>
               {weather.map((item) => (
-                <b style={{ color: "#A1A1A1" }}>
+                <b>
                   {item.name} / {item.main.temp}º
                 </b>
               ))}
             </Nav.Link>
             <Nav.Link href="https://www.msn.com/pt-br/noticias?cvid=cb933c86e219409497b26580606ba535">
-              <b style={{ color: "#A1A1A1" }}>NOTÍCIAS</b>
+              <b>NOTÍCIAS</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/entretenimento?cvid=cb933c86e219409497b26580606ba535">
-              <b style={{ color: "#A1A1A1" }}>ENTRETENIMENTO</b>
+            <Nav.Link
+              className="link enterteinment"
+              href="https://www.msn.com/pt-br/entretenimento?cvid=cb933c86e219409497b26580606ba535"
+            >
+              <b>ENTRETENIMENTO</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/esportes?cvid=cb933c86e219409497b26580606ba535">
-              <b style={{ color: "#A1A1A1" }}>ESPORTES</b>
+            <Nav.Link
+              className="link sport"
+              href="https://www.msn.com/pt-br/esportes?cvid=cb933c86e219409497b26580606ba535"
+            >
+              <b>ESPORTES</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/estilo-de-vida?cvid=cb933c86e219409497b26580606ba535">
-              <b style={{ color: "#A1A1A1" }}>ESTILO DE VIDA</b>
+            <Nav.Link
+              className="link lifeStyle"
+              href="https://www.msn.com/pt-br/estilo-de-vida?cvid=cb933c86e219409497b26580606ba535"
+            >
+              <b>ESTILO DE VIDA</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/estilo-de-vida/horoscopo?cvid=cb933c86e219409497b26580606ba535">
-              <b style={{ color: "#A1A1A1" }}>HORÓSCOPO</b>
+            <Nav.Link
+              className="link pattern"
+              href="https://www.msn.com/pt-br/estilo-de-vida/horoscopo?cvid=cb933c86e219409497b26580606ba535"
+            >
+              <b>HORÓSCOPO</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/dinheiro?cvid=cb933c86e219409497b26580606ba535">
-              <b style={{ color: "#A1A1A1" }}>DINHEIRO</b>
+            <Nav.Link
+              className="link cash"
+              href="https://www.msn.com/pt-br/dinheiro?cvid=cb933c86e219409497b26580606ba535"
+            >
+              <b>DINHEIRO</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/receitasebebidas?cvid=cb933c86e219409497b26580606ba535">
-              <b style={{ color: "#A1A1A1" }}>RECEITAS</b>
+            <Nav.Link
+              className="link recipe"
+              href="https://www.msn.com/pt-br/receitasebebidas?cvid=cb933c86e219409497b26580606ba535"
+            >
+              <b>RECEITAS</b>
             </Nav.Link>
-            <Nav.Link href="https://start.gg/discover?locale=pt-br&ocid=essports">
-              <b style={{ color: "#A1A1A1" }}>ESPORTS</b>
+            <Nav.Link
+              className="link pattern"
+              href="https://start.gg/discover?locale=pt-br&ocid=essports"
+            >
+              <b>ESPORTS</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/carros?cvid=cb933c86e219409497b26580606ba535">
-              <b style={{ color: "#A1A1A1" }}>CARROS</b>
+            <Nav.Link
+              className="link car"
+              href="https://www.msn.com/pt-br/carros?cvid=cb933c86e219409497b26580606ba535"
+            >
+              <b>CARROS</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/tv?cvid=cb933c86e219409497b26580606ba535">
-              <b style={{ color: "#A1A1A1" }}>TV</b>
+            <Nav.Link
+              className="link pattern"
+              href="https://www.msn.com/pt-br/tv?cvid=cb933c86e219409497b26580606ba535"
+            >
+              <b>TV</b>
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/clima?cvid=cb933c86e219409497b26580606ba535">
-              <b style={{ color: "#A1A1A1" }}>TEMPO</b>
+            <Nav.Link
+              className="link pattern"
+              href="https://www.msn.com/pt-br/clima?cvid=cb933c86e219409497b26580606ba535"
+            >
+              <b>TEMPO</b>
             </Nav.Link>
           </ul>
         </div>

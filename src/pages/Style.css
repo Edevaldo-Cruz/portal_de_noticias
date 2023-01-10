@@ -1,0 +1,44 @@
+.link {
+  color: #262626;
+  opacity: 0.5;
+}
+
+.enterteinment:hover {
+  color: #b42d73 !important;
+  text-decoration-color: #b42d73;
+  opacity: 0.7;
+}
+
+.sport:hover {
+  color: #1250a1 !important;
+  text-decoration-color: #1250a1;
+  opacity: 0.7;
+}
+
+.lifeStyle:hover {
+  color: #a04beb !important;
+  text-decoration-color: #a04beb;
+  opacity: 0.7;
+}
+
+.pattern:hover {
+  opacity: 1;
+}
+
+.cash:hover {
+  color: #39821e !important;
+  text-decoration-color: #39821e;
+  opacity: 0.7;
+}
+
+.recipe:hover {
+  color: #25e8d1 !important;
+  text-decoration-color: #25e8d1;
+  opacity: 0.7;
+}
+
+.car:hover {
+  color: #f21e0e !important;
+  text-decoration-color: #f21e0e;
+  opacity: 0.7;
+}
