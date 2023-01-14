@@ -16,6 +16,7 @@ import axios from "axios";
 import LinkCarousel from "../components/LinkCarousel/Index";
 
 import "./Style.css";
+import Advertising from "../components/Advertising/Index";
 
 export const Home = () => {
   const { itens: news } = useAPI(
@@ -60,6 +61,7 @@ export const Home = () => {
     <>
       <Navbar />
       <div style={{ maxWidth: "1600px", alignItems: "center", margin: "auto" }}>
+        <Advertising />
         <LinkCarousel />
         <div>
           <hr />

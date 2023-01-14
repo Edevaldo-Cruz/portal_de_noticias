@@ -1,7 +1,5 @@
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import InputGroup from "react-bootstrap/InputGroup";
 
@@ -15,41 +13,55 @@ function NewNavbar() {
       <Container
         style={{ maxWidth: "1600px", alignItems: "center", margin: "auto" }}
       >
-        <div className="row d-flex justify-content-between">
-          <Navbar.Brand className="col" href="#">
-            Navbar scroll
+        <div className="d-flex">
+          <Navbar.Brand style={{ textDecoration: "none" }} href="#">
+            <svg
+              fill="currentColor"
+              viewBox="0 0 124.66 168.19"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{
+                width: "30px",
+                height: "42px",
+                margin: "10px",
+              }}
+            >
+              <title>msn_logo</title>
+              <g id="Layer_2" data-name="Layer 2">
+                <g id="Layer_1-2" data-name="Layer 1">
+                  <path d="M82,91.65c4.37-9.67,9-19.47,15.26-28.08a62.89,62.89,0,0,1,10.59-11.63c3.19-2.64,8.68-6.68,13-4.53s3.93,9,3.35,13a60,60,0,0,1-4.45,14.85c-5.44,12.75-14,24.19-22.79,34.8-1.61,1.94-3.24,3.87-4.93,5.76a91.06,91.06,0,0,1-1,9.88,60.69,60.69,0,0,1-12.4,29c-2.8,3.44-7.74,8.81-12.77,7.81-5.31-1.06-5.32-8.77-5-12.87a57.14,57.14,0,0,1,3.78-15.39C72,115.8,79.9,96.68,82,91.65"></path>
+                  <path d="M71,105.76c-5.37,18.4-16.84,44.69-33.28,55.66-7.45,5-17.46,8.8-26.36,5.6C1.47,163.53-1.09,152.5.38,143.16,2,132.72,7.75,123.65,14.49,115.75a54.18,54.18,0,0,1,12.67-10.13c7.47,4.14,16.59,8.72,24.27,11.15A99.3,99.3,0,0,1,34,102.35c-5.72-6.66-14.92-19.81-17.78-30.09-2.93-10.55-5.37-21.58-5.08-32.58.27-10,2.75-20.5,8.77-28.68C26.14,2.62,36.09-2,46.41.86,56.2,3.59,63.73,11.6,68.72,20.13a68.58,68.58,0,0,1,8.86,29.44A154.72,154.72,0,0,1,71,105.76Z"></path>
+                </g>
+              </g>
+            </svg>
+            <b>msn</b>
           </Navbar.Brand>
-          {/* <Navbar.Toggle aria-controls="navbarScroll" /> */}
-          {/* <Navbar.Collapse id="navbarScroll"> */}
-          <Nav
-            className="me-auto my-2 my-lg-0 col"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          ></Nav>
-          <InputGroup
-            className="mb-3 shadow col"
-            style={{ width: "40rem", height: "3.5rem" }}
-          >
+
+          <InputGroup className="mb-3">
             <Form.Control
-              placeholder="Recipient's username"
+              autoFocus
+              placeholder=" "
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
-              className="col"
+              className="shadow p-3 mb-5 bg-white"
+              style={{ width: "630px", height: "64px" }}
             />
-            <Button
-              className="btn btn-primary"
-              variant="outline-secondary"
-              id="button-addon2"
+            <InputGroup.Text
+              id="basic-addon2"
+              className="shadow mb-5"
+              style={{
+                width: "70px",
+                height: "64px",
+                backgroundColor: "rgb(51 147 223)",
+                color: "white",
+              }}
             >
-              Button
-            </Button>
+              ?
+            </InputGroup.Text>
           </InputGroup>
-          <div className="row col">
-            <p className="col">1</p>
-            <p className="col">2</p>
-            <p className="col">3</p>
+          <div>
+            <p>Antonio</p>
+            <img></img>
           </div>
-          {/* </Navbar.Collapse> */}
         </div>
       </Container>
     </Navbar>
