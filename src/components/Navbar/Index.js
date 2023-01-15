@@ -2,19 +2,25 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Navbar from "react-bootstrap/Navbar";
 import InputGroup from "react-bootstrap/InputGroup";
+import user from "../../assets/faceUser.png";
+import { FaRegBell } from "react-icons/fa";
+import { GoGear } from "react-icons/go";
+import { FaSistrix } from "react-icons/fa";
 
 function NewNavbar() {
   return (
-    <Navbar
-      className="shadow mb-5"
+    <div
+      className="fixed-top"
       sticky="top"
       style={{ height: "6.75rem", backgroundColor: "#f4f4f2" }}
     >
-      <Container
-        style={{ maxWidth: "1600px", alignItems: "center", margin: "auto" }}
-      >
-        <div className="d-flex">
-          <Navbar.Brand style={{ textDecoration: "none" }} href="#">
+      <Container style={{ maxWidth: "1600px" }}>
+        <div className="d-flex justify-content-between align-items-center mt-4">
+          <Navbar.Brand
+            className="d-flex align-items-center"
+            style={{ marginRight: "10rem" }}
+            href="#"
+          >
             <svg
               fill="currentColor"
               viewBox="0 0 124.66 168.19"
@@ -22,7 +28,6 @@ function NewNavbar() {
               style={{
                 width: "30px",
                 height: "42px",
-                margin: "10px",
               }}
             >
               <title>msn_logo</title>
@@ -36,35 +41,54 @@ function NewNavbar() {
             <b>msn</b>
           </Navbar.Brand>
 
-          <InputGroup className="mb-3">
+          <InputGroup className="d-flex">
             <Form.Control
               autoFocus
               placeholder=" "
-              aria-label="Recipient's username"
               aria-describedby="basic-addon2"
-              className="shadow p-3 mb-5 bg-white"
+              className="d-flex align-items-center shadow bg-white"
               style={{ width: "630px", height: "64px" }}
             />
             <InputGroup.Text
-              id="basic-addon2"
-              className="shadow mb-5"
+              className="d-flex shadow"
               style={{
-                width: "70px",
+                width: "75px",
                 height: "64px",
                 backgroundColor: "rgb(51 147 223)",
                 color: "white",
               }}
             >
-              ?
+              <FaSistrix size={"2rem"} />
             </InputGroup.Text>
           </InputGroup>
-          <div>
-            <p>Antonio</p>
-            <img></img>
+
+          <div
+            className="d-flex justify-content-between align-items-center"
+            style={{ width: "20rem", marginLeft: "10rem" }}
+          >
+            <p
+              style={{
+                color: "#262626",
+                opacity: "0.8",
+              }}
+            >
+              Isabely
+            </p>
+            <img
+              alt=""
+              src={user}
+              style={{
+                width: "3rem",
+                height: "3rem",
+                borderRadius: "35px",
+              }}
+            />
+            <FaRegBell size={"1.5rem"} color={"#262626"} opacity={"0.5"} />
+            <GoGear size={"1.5rem"} color={"#262626"} opacity={"0.5"} />
           </div>
         </div>
       </Container>
-    </Navbar>
+    </div>
   );
 }
 

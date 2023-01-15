@@ -15,7 +15,11 @@ import microsoftStore from "../../assets/store.png";
 
 function LinkCarousel() {
   return (
-    <Carousel interval={9999999} indicators={false} className="mt-4">
+    <Carousel
+      interval={9999999}
+      indicators={false}
+      style={{ marginTop: "10rem" }}
+    >
       <Carousel.Item>
         <div className="row">
           <a
