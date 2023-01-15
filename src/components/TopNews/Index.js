@@ -1,9 +1,9 @@
 import NewsCard from "../Card/Index";
-import { Card } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import { useAPI } from "../../hooks/useAPI";
 import SpecialCard from "../SpecialCard/Index";
 import "./Style.css";
+import { FaChevronRight } from "react-icons/fa";
 
 export const TopNews = () => {
   const { itens: news } = useAPI(
@@ -21,7 +21,9 @@ export const TopNews = () => {
         }}
       >
         <ul className="d-flex justify-content-between">
-          <h1>Notícias</h1>
+          <h1>
+            Notícias <FaChevronRight />
+          </h1>
           <Nav.Link></Nav.Link>
           <Nav.Link
             className="colorRed"
