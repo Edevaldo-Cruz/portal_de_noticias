@@ -8,7 +8,6 @@ import NewsCard from "../components/Card/Index";
 import TopNews from "../components/TopNews/Index";
 import Entertainment from "../components/Entertainment/Index";
 import Technology from "../components/Technology/Index";
-import Popular from "../components/Popular/Index";
 import { useAPI } from "../hooks/useAPI";
 import Sports from "../components/Sports/Index";
 import Button from "react-bootstrap/Button";
@@ -38,16 +37,13 @@ export const Home = () => {
           lat: lat,
           lon: long,
           appid: process.env.REACT_APP_OPEN_WHEATHER_KEY,
-          //appid: "e5acddc6234c161716cc24ac706d4518",
           lang: "pt",
           units: "metric",
         },
       }
     );
-    // itemNews.push(res.data);
-    // setWeather(itemNews);
-    //console.log(res.data);
-    setWeather(res.data);
+    itemNews.push(res.data);
+    setWeather(itemNews);
   };
 
   useEffect(() => {
@@ -67,8 +63,8 @@ export const Home = () => {
           <hr />
           <ul className="d-flex justify-content-between">
             <Nav.Link className="teste" onClick={handleShow}>
-              {weather.map((item) => (
-                <b>
+              {weather.slice(0, 1).map((item, key) => (
+                <b key={key}>
                   {item.name} / {item.main.temp}º
                 </b>
               ))}
@@ -160,12 +156,11 @@ export const Home = () => {
             <Sports />
             <Entertainment />
             <Technology />
-            <Popular />
           </div>
         </div>
       </div>
       {weather.map((item, key) => (
-        <Modal show={show} onHide={handleClose}>
+        <Modal key={key} show={show} onHide={handleClose}>
           <Modal.Header
             closeButton
             style={{ backgroundColor: "#ccc" }}

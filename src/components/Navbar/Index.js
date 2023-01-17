@@ -6,6 +6,7 @@ import user from "../../assets/faceUser.png";
 import { FaRegBell } from "react-icons/fa";
 import { GoGear } from "react-icons/go";
 import { FaSistrix } from "react-icons/fa";
+import "./Style.css";
 
 function NewNavbar() {
   return (
@@ -66,25 +67,33 @@ function NewNavbar() {
             className="d-flex justify-content-between align-items-center"
             style={{ width: "20rem", marginLeft: "10rem" }}
           >
-            <p
+            <a
               style={{
                 color: "#262626",
                 opacity: "0.8",
+                cursor: "pointer",
               }}
             >
               Isabely
-            </p>
-            <img
-              alt=""
-              src={user}
-              style={{
-                width: "3rem",
-                height: "3rem",
-                borderRadius: "35px",
-              }}
-            />
-            <FaRegBell size={"1.5rem"} color={"#262626"} opacity={"0.5"} />
-            <GoGear size={"1.5rem"} color={"#262626"} opacity={"0.5"} />
+            </a>
+            <a>
+              <img
+                alt=""
+                src={user}
+                style={{
+                  width: "3rem",
+                  height: "3rem",
+                  borderRadius: "35px",
+                  cursor: "pointer",
+                }}
+              />
+            </a>
+            <div className="divBtn center">
+              <FaRegBell size={"1.5rem"} color={"#262626"} opacity={"0.5"} />
+            </div>
+            <div className="divBtn center">
+              <GoGear size={"1.5rem"} color={"#262626"} opacity={"0.5"} />
+            </div>
           </div>
         </div>
       </Container>
