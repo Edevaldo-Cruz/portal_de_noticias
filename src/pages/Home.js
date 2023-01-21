@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Navbar from "../components/Navbar/Index";
 import Modal from "react-bootstrap/Modal";
 import Nav from "react-bootstrap/Nav";
 import NewsCarousel from "../components/Carousel/Index";
-import BigCard from "../components/BigCard/Index";
+import BigCard1 from "../components/BigCard1/Index";
+import BigCard2 from "../components/BigCard2/Index";
 import NewsCard from "../components/Card/Index";
 import TopNews from "../components/TopNews/Index";
 import Entertainment from "../components/Entertainment/Index";
@@ -11,11 +13,10 @@ import Technology from "../components/Technology/Index";
 import { useAPI } from "../hooks/useAPI";
 import Sports from "../components/Sports/Index";
 import Button from "react-bootstrap/Button";
-import axios from "axios";
 import LinkCarousel from "../components/LinkCarousel/Index";
+import Baseboard from "../components/Baseboard/Index";
 
 import "./Style.css";
-import Advertising from "../components/Advertising/Index";
 
 export const Home = () => {
   const { itens: news } = useAPI(
@@ -56,8 +57,7 @@ export const Home = () => {
   return (
     <>
       <Navbar />
-      <div style={{ maxWidth: "1600px", alignItems: "center", margin: "auto" }}>
-        <Advertising />
+      <div className="divContainer">
         <LinkCarousel />
         <div>
           <hr />
@@ -65,7 +65,7 @@ export const Home = () => {
             <Nav.Link className="teste" onClick={handleShow}>
               {weather.slice(0, 1).map((item, key) => (
                 <b key={key}>
-                  {item.name} / {item.main.temp}º
+                  {item.name} / {item.main.temp.toString().substring(0, 2)}º
                 </b>
               ))}
             </Nav.Link>
@@ -134,19 +134,23 @@ export const Home = () => {
             </Nav.Link>
           </ul>
         </div>
-        <div className="row" style={{ marginTop: "2rem" }}>
+        <div className="row mt-4">
           <NewsCarousel />
-          <BigCard />
-          <BigCard />
-          <div style={{ marginTop: "0.5rem" }}>
+          <BigCard1 />
+          <BigCard2 />
+          <div className="mt-1">
             <div className="row">
-              {news.slice(1, 9).map((item, key) => (
+              {news.slice(1, 9).map((item) => (
                 <div className="col-3">
                   <NewsCard
-                    key={key}
+                    key={item.index}
                     url={item.url}
                     image={item.urlToImage}
-                    title={item.title}
+                    title={
+                      item.title.length > 90
+                        ? item.title.substring(0, 90) + "..."
+                        : item.title
+                    }
                     author={item.author}
                   />
                 </div>
@@ -159,13 +163,11 @@ export const Home = () => {
           </div>
         </div>
       </div>
+      <Baseboard />
       {weather.map((item, key) => (
         <Modal key={key} show={show} onHide={handleClose}>
-          <Modal.Header
-            closeButton
-            style={{ backgroundColor: "#ccc" }}
-          ></Modal.Header>
-          <Modal.Body style={{ backgroundColor: "#ccc" }}>
+          <Modal.Header closeButton className="gray"></Modal.Header>
+          <Modal.Body className="gray">
             <h3>CLIMA ATUAL</h3>
             <p>18:51</p>
             <h1>{item.main.temp}°</h1>
@@ -174,7 +176,7 @@ export const Home = () => {
             <p>A máxima será de {item.main.temp_max}</p>
             <p>Umidade: {item.main.humidity}</p>
           </Modal.Body>
-          <Modal.Footer style={{ backgroundColor: "#ccc" }}>
+          <Modal.Footer className="gray">
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
@@ -184,7 +186,6 @@ export const Home = () => {
           </Modal.Footer>
         </Modal>
       ))}
-      );
     </>
   );
 };

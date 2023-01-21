@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import axios from "axios";
+import "./Styles.css";
 
 function NewsCarousel() {
   const [index, setIndex] = useState(0);
@@ -23,38 +24,23 @@ function NewsCarousel() {
   };
 
   return (
-    <div className="col-6 ">
-      <div
-        style={{
-          width: "50rem",
-          height: "23.25rem",
-          backgroundColor: "black",
-          opacity: "0.9",
-        }}
-      >
+    <div className="col-6">
+      <div className="divCarousel">
         <Carousel
-          className="shadow "
+          className="shadow heightCarousel"
           activeIndex={index}
           onSelect={handleSelect}
-          style={{
-            height: "23.25rem",
-          }}
         >
           {newsCarousel.map((item, key) => (
             <Carousel.Item key={key}>
               <a href={item.url}>
                 <img
-                  className="d-block w-100"
+                  className="d-block w-100 heightImg"
                   src={item.urlToImage}
                   alt=""
-                  style={{ height: "23.25rem" }}
                 />
                 <Carousel.Caption>
-                  <div
-                    style={{
-                      backgroundColor: "rgba(52, 52, 52, 0.9)",
-                    }}
-                  >
+                  <div className="divSubtitle">
                     <h3>{item.title}</h3>
                   </div>
                 </Carousel.Caption>

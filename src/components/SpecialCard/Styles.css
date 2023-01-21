@@ -1,0 +1,13 @@
+.sizeImg {
+  width: 30rem;
+  height: 23.5rem;
+}
+
+.subtitle {
+  background-color: rgba(52, 52, 52, 0.7);
+  width: 28rem;
+}
+
+.white {
+  color: white;
+}

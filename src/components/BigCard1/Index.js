@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 import NewsCard from "../Card/Index";
 import { useAPI } from "../../hooks/useAPI";
 
-function BigCard() {
+function BigCard1() {
   const { itens: news } = useAPI(
     "top-headlines?country=br&apiKey=9440f38accc54afdacaacd4d6c481ebe"
   );
@@ -58,4 +58,4 @@ function BigCard() {
   );
 }
 
-export default BigCard;
+export default BigCard1;

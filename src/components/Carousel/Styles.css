@@ -1,0 +1,62 @@
+.divCarousel {
+  width: 50rem;
+  height: 23.25rem;
+  background-color: black;
+  opacity: 0.9;
+}
+
+.heightCarousel {
+  height: 23.25rem;
+}
+
+.divSubtitle {
+  background-color: rgba(52, 52, 52, 0.9);
+}
+
+.heightImg {
+  height: 23.25rem;
+}
+
+.carousel-control-next {
+  display: flex !important;
+  justify-content: end !important;
+  align-items: center !important;
+}
+
+.carousel-control-prev {
+  display: flex !important;
+  justify-content: start !important;
+  align-items: center !important;
+}
+
+.carousel-control-next-icon {
+  width: 40px !important;
+  height: 86px !important;
+  background-color: #777777 !important;
+  color: black !important;
+}
+
+.carousel-control-prev-icon {
+  width: 40px !important;
+  height: 86px !important;
+  background-color: #808080 !important;
+  opacity: 0.8;
+}
+
+.carousel-control-next-icon:hover {
+  width: 45px !important;
+  height: 96px !important;
+  opacity: 0.8;
+}
+
+.carousel .carousel-indicators button {
+  width: 10px;
+  height: 6px;
+  border-radius: 100%;
+}
+
+.carousel .carousel-indicators .active {
+  width: 45px !important;
+  height: 6px !important;
+  border-radius: 11px !important;
+}

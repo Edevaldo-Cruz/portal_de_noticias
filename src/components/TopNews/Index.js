@@ -2,7 +2,6 @@ import NewsCard from "../Card/Index";
 import Nav from "react-bootstrap/Nav";
 import { useAPI } from "../../hooks/useAPI";
 import SpecialCard from "../SpecialCard/Index";
-import "./Style.css";
 import { FaChevronRight } from "react-icons/fa";
 
 export const TopNews = () => {
@@ -11,19 +10,12 @@ export const TopNews = () => {
   );
   return (
     <>
-      <div
-        style={{
-          marginTop: "4rem",
-          marginBottom: "1.5rem",
-          borderTopStyle: "solid",
-          borderTopWidth: 4,
-          borderTopColor: "#000",
-        }}
-      >
-        <ul className="d-flex justify-content-between">
+      <div className="lineNews">
+        <ul className="d-flex justify-content-between center">
           <h1>
-            Notícias <FaChevronRight />
+            Notícias <FaChevronRight size={"25px"} />
           </h1>
+
           <Nav.Link></Nav.Link>
           <Nav.Link
             className="colorRed"
@@ -58,55 +50,49 @@ export const TopNews = () => {
         </ul>
       </div>
       <div className="row d-flex mb-4">
-        <div
-          className="col-3"
-          style={{
-            width: "30rem",
-            height: "23.5rem",
-            marginTop: "1rem",
-            marginRight: "1.5rem",
-          }}
-        >
+        <div className="col-3 divNews">
           {news.slice(0, 1).map((item, key) => (
             <SpecialCard
+              key={key}
               url={item.url}
               img={item.urlToImage}
               title={item.title}
-              description={item.description}
+              description={
+                item.description.length > 75
+                  ? item.description.substring(0, 75) + "..."
+                  : item.description
+              }
               author={item.author}
             />
           ))}
         </div>
 
-        <div
-          className="col-3"
-          style={{
-            width: "35rem",
-            height: "24rem",
-          }}
-        >
+        <div className="col-3 divCard">
           {news.slice(13, 16).map((item, key) => (
             <NewsCard
               key={item.url}
               url={item.url}
               image={item.urlToImage}
-              title={item.title}
+              title={
+                item.title.length > 75
+                  ? item.title.substring(0, 75) + "..."
+                  : item.title
+              }
               author={item.author}
             />
           ))}
         </div>
-        <div
-          style={{
-            width: "35rem",
-            height: "24rem",
-          }}
-        >
-          {news.slice(16, 19).map((item, key) => (
+        <div className="col-3 divCard">
+          {news.slice(9, 12).map((item, key) => (
             <NewsCard
-              key={item.url}
+              key={key}
               url={item.url}
               image={item.urlToImage}
-              title={item.title}
+              title={
+                item.title.length > 60
+                  ? item.title.substring(0, 60) + "..."
+                  : item.title
+              }
               author={item.author}
             />
           ))}

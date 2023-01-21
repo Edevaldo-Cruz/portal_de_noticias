@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Navbar from "react-bootstrap/Navbar";
@@ -6,30 +7,19 @@ import user from "../../assets/faceUser.png";
 import { FaRegBell } from "react-icons/fa";
 import { GoGear } from "react-icons/go";
 import { FaSistrix } from "react-icons/fa";
-import "./Style.css";
+import "./Styles.css";
 
 function NewNavbar() {
   return (
-    <div
-      className="fixed-top"
-      sticky="top"
-      style={{ height: "6.75rem", backgroundColor: "#f4f4f2" }}
-    >
-      <Container style={{ maxWidth: "1600px" }}>
+    <div className="fixed-top shadow-sm divNav" sticky="top">
+      <Container className="containerNav">
         <div className="d-flex justify-content-between align-items-center mt-4">
-          <Navbar.Brand
-            className="d-flex align-items-center"
-            style={{ marginRight: "10rem" }}
-            href="#"
-          >
+          <Navbar.Brand className="d-flex align-items-center spacing" href="#">
             <svg
               fill="currentColor"
               viewBox="0 0 124.66 168.19"
               xmlns="http://www.w3.org/2000/svg"
-              style={{
-                width: "30px",
-                height: "42px",
-              }}
+              className="sizeSvg"
             >
               <title>msn_logo</title>
               <g id="Layer_2" data-name="Layer 2">
@@ -50,43 +40,17 @@ function NewNavbar() {
               className="d-flex align-items-center shadow bg-white"
               style={{ width: "630px", height: "64px" }}
             />
-            <InputGroup.Text
-              className="d-flex shadow"
-              style={{
-                width: "75px",
-                height: "64px",
-                backgroundColor: "rgb(51 147 223)",
-                color: "white",
-              }}
-            >
-              <FaSistrix size={"2rem"} />
+            <InputGroup.Text className="d-flex shadow inputSearch center">
+              <FaSistrix size={"2rem"} color={"#FFF"} />
             </InputGroup.Text>
           </InputGroup>
 
-          <div
-            className="d-flex justify-content-between align-items-center"
-            style={{ width: "20rem", marginLeft: "10rem" }}
-          >
-            <a
-              style={{
-                color: "#262626",
-                opacity: "0.8",
-                cursor: "pointer",
-              }}
-            >
+          <div className="d-flex justify-content-between align-items-center divInfo">
+            <a href="#" className="nameUser">
               Isabely
             </a>
             <a>
-              <img
-                alt=""
-                src={user}
-                style={{
-                  width: "3rem",
-                  height: "3rem",
-                  borderRadius: "35px",
-                  cursor: "pointer",
-                }}
-              />
+              <img alt="" src={user} className="imgUser" />
             </a>
             <div className="divBtn center">
               <FaRegBell size={"1.5rem"} color={"#262626"} opacity={"0.5"} />
