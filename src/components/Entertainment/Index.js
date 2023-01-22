@@ -8,7 +8,8 @@ import "./Styles.css";
 
 function Entertainment() {
   const { itens: news } = useAPI(
-    "top-headlines?country=br&category=entertainment&apiKey=9440f38accc54afdacaacd4d6c481ebe"
+    "top-headlines?country=br&category=entertainment&apiKey=" +
+      process.env.REACT_APP_API_NEWS
   );
   return (
     <>

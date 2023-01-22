@@ -9,7 +9,8 @@ import "./Styles.css";
 
 function Sports() {
   const { itens: news } = useAPI(
-    "top-headlines?country=br&category=sports&apiKey=9440f38accc54afdacaacd4d6c481ebe"
+    "top-headlines?country=br&category=sports&apiKey=" +
+      process.env.REACT_APP_API_NEWS
   );
 
   return (

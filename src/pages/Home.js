@@ -20,7 +20,7 @@ import "./Style.css";
 
 export const Home = () => {
   const { itens: news } = useAPI(
-    "top-headlines?country=br&apiKey=9440f38accc54afdacaacd4d6c481ebe"
+    "top-headlines?country=br&apiKey=" + process.env.REACT_APP_API_NEWS
   );
 
   const [location, setLocation] = useState(false);
@@ -69,7 +69,10 @@ export const Home = () => {
                 </b>
               ))}
             </Nav.Link>
-            <Nav.Link href="https://www.msn.com/pt-br/noticias?cvid=cb933c86e219409497b26580606ba535">
+            <Nav.Link
+              className="link"
+              href="https://www.msn.com/pt-br/noticias?cvid=cb933c86e219409497b26580606ba535"
+            >
               <b>NOTÍCIAS</b>
             </Nav.Link>
             <Nav.Link
@@ -147,8 +150,8 @@ export const Home = () => {
                     url={item.url}
                     image={item.urlToImage}
                     title={
-                      item.title.length > 90
-                        ? item.title.substring(0, 90) + "..."
+                      item.title.length > 60
+                        ? item.title.substring(0, 60) + "..."
                         : item.title
                     }
                     author={item.author}

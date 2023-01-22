@@ -5,7 +5,8 @@ import { FaChevronRight } from "react-icons/fa";
 
 function Technology() {
   const { itens: news } = useAPI(
-    "top-headlines?country=br&category=technology&apiKey=9440f38accc54afdacaacd4d6c481ebe"
+    "top-headlines?country=br&category=technology&apiKey=" +
+      process.env.REACT_APP_API_NEWS
   );
 
   return (

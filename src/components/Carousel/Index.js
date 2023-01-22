@@ -18,7 +18,8 @@ function NewsCarousel() {
   const getNewsCarousel = () => {
     axios
       .get(
-        "https://newsapi.org/v2/top-headlines?country=br&category=business&apiKey=9440f38accc54afdacaacd4d6c481ebe"
+        "https://newsapi.org/v2/top-headlines?country=br&category=business&apiKey=" +
+          process.env.REACT_APP_API_NEWS
       )
       .then((result) => setNewCarousel(result.data.articles));
   };

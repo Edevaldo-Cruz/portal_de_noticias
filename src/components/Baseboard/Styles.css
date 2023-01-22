@@ -4,10 +4,10 @@
   background-color: #fcfcfc;
   margin-top: 2rem;
   align-items: center;
-  color: black !important;
 }
 
 .end {
   display: flex;
   justify-content: end;
+  color: black !important;
 }

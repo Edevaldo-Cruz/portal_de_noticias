@@ -5,7 +5,7 @@ import "./Index";
 
 function BigCard2() {
   const { itens: news } = useAPI(
-    "top-headlines?country=br&apiKey=9440f38accc54afdacaacd4d6c481ebe"
+    "top-headlines?country=br&apiKey=" + process.env.REACT_APP_API_NEWS
   );
 
   return (
