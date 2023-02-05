@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Navbar from "react-bootstrap/Navbar";
@@ -10,8 +11,27 @@ import { FaSistrix } from "react-icons/fa";
 import "./Styles.css";
 
 function NewNavbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="fixed-top shadow-sm divNav" sticky="top">
+    //className="fixed-top shadow-sm divNav" sticky="top">
+    <div className={`navbar fixed-top ${isScrolled ? "navbar-shadow" : ""}`}>
       <Container className="containerNav">
         <div className="d-flex justify-content-between align-items-center mt-4">
           <Navbar.Brand className="d-flex align-items-center spacing" href="#">

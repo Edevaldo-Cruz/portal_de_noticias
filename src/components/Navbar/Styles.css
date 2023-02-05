@@ -51,3 +51,8 @@
   border-radius: 35px;
   cursor: pointer;
 }
+
+.navbar-shadow {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f2;
+}

@@ -160,7 +160,7 @@ export const Home = () => {
               ))}
             </div>
             <TopNews />
-            <Sports />
+            {/* <Sports /> */}
             <Entertainment />
             <Technology />
           </div>
